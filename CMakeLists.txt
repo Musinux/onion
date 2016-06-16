@@ -259,7 +259,7 @@ INCLUDE(CPack)
 add_subdirectory(src)
 add_subdirectory(tools)
 
-SET(OTEMPLATE otemplate)
+#SET(OTEMPLATE otemplate)
 SET(OPACK opack)
 
 if (${ONION_EXAMPLES})
