@@ -250,13 +250,14 @@ ELSE (${CMAKE_BUILD_TYPE} MATCHES "Debug")
 	SET(CMAKE_CXX_FLAGS "-Wall -O2 -fPIC ${CMAKE_CXX_FLAGS}")
 ENDIF (${CMAKE_BUILD_TYPE} MATCHES "Debug")
 
+SET(PKG_CONFIG_LIBDIR
+	"\${prefix}/lib")
 SET(PKG_CONFIG_INCLUDEDIR
-	"\${prefix}/include/libonion")
+	"\${prefix}/include/")
 SET(PKG_CONFIG_LIBS
-	"-L\${libdir} -llibonion")
+	"-L\${libdir} -l:libonion_static.a")
 SET(PKG_CONFIG_CFLAGS
-	"-I\${includedir}/libonion"
-)
+	"-I\${includedir}/onion")
 
 CONFIGURE_FILE(
 	"${CMAKE_CURRENT_SOURCE_DIR}/pkg-config.pc.cmake"
