@@ -253,11 +253,11 @@ ENDIF (${CMAKE_BUILD_TYPE} MATCHES "Debug")
 SET(PKG_CONFIG_LIBDIR
 	"\${prefix}/lib")
 SET(PKG_CONFIG_INCLUDEDIR
-	"\${prefix}/include/")
+	"\${prefix}/include")
 SET(PKG_CONFIG_LIBS
 	"-L\${libdir} -l:libonion_static.a")
 SET(PKG_CONFIG_CFLAGS
-	"-I\${includedir}/onion")
+	"-I\${includedir}")
 
 CONFIGURE_FILE(
 	"${CMAKE_CURRENT_SOURCE_DIR}/pkg-config.pc.cmake"
