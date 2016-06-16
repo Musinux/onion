@@ -267,8 +267,8 @@ if (${ONION_EXAMPLES})
 endif (${ONION_EXAMPLES})
 
 if (${ONION_USE_TESTS})
+	add_subdirectory(tests)
 	enable_testing()
 endif(${ONION_USE_TESTS})
 
-#add_subdirectory(tests)
 add_subdirectory(manpages)
