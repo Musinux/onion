@@ -257,7 +257,7 @@ INCLUDE(CPackConfig.cmake)
 INCLUDE(CPack)
 
 add_subdirectory(src)
-add_subdirectory(tools)
+#add_subdirectory(tools)
 
 #SET(OTEMPLATE otemplate)
 SET(OPACK opack)
