@@ -250,6 +250,21 @@ ELSE (${CMAKE_BUILD_TYPE} MATCHES "Debug")
 	SET(CMAKE_CXX_FLAGS "-Wall -O2 -fPIC ${CMAKE_CXX_FLAGS}")
 ENDIF (${CMAKE_BUILD_TYPE} MATCHES "Debug")
 
+SET(PKG_CONFIG_INCLUDEDIR
+	"\${prefix}/include/libonion")
+SET(PKG_CONFIG_LIBS
+	"-L\${libdir} -llibonion")
+SET(PKG_CONFIG_CFLAGS
+	"-I\${includedir}/libonion"
+)
+
+CONFIGURE_FILE(
+	"${CMAKE_CURRENT_SOURCE_DIR}/pkg-config.pc.cmake"
+	"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
+)
+
+INSTALL(FILES "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc"
+	DESTINATION lib/pkgconfig)
 
 project (onion)
 
@@ -272,3 +287,4 @@ if (${ONION_USE_TESTS})
 endif(${ONION_USE_TESTS})
 
 add_subdirectory(manpages)
+
