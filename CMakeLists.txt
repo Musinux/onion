@@ -115,6 +115,7 @@ if (${ONION_USE_PTHREADS})
 		message("pthreads not found. Threading is not supported.")
 		#message(FATAL_ERROR0 "pthreads is required.")
 		add_definitions(-Dpthread)
+		set(PTHREADS true)
 	endif(PTHREADS_LIB)
 endif(${ONION_USE_PTHREADS})
 
